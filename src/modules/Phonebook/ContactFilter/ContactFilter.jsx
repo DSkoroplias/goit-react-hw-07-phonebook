@@ -14,14 +14,14 @@ const ContactFilter = () => {
 
   return (
     <div className={styles.formGroup}>
-      <label htmlFor="">Find contacts by name</label>
       <input
+        className={styles.formInput}
         value={filter}
         onChange={handleFilter}
         name="filter"
         type="text"
-        placeholder="Filter books"
       />
+      <label className={styles.formLabel}>Filter books</label>
     </div>
   );
 };

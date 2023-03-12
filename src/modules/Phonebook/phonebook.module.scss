@@ -16,11 +16,18 @@ code {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 400px;
+  grid-template-columns: 400px 400px;
   gap: 30px;
+  justify-content: center;
 }
 
 .block {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.block_phonebook {
   border: 1px solid;
   border-radius: 5px;
   padding: 15px;

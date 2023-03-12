@@ -2,12 +2,14 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import styles from './contact-list-el.module.scss';
+
 const ContactListEl = ({ id, name, phone, removeContact }) => {
   return (
     <ul>
-      <li key={id}>
+      <li className={styles.listItem} key={id}>
         {name}: {phone}
-        <button onClick={removeContact} type="button">
+        <button className={styles.button} onClick={removeContact} type="button">
           Delete
         </button>
       </li>

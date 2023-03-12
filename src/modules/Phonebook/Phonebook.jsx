@@ -15,12 +15,16 @@ const Phonebook = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h1>Contacts</h1>
-      <ContactFilter />
-      {isContacts && <ContactList />}
-      {!isContacts && <p>No contacts</p>}
+      <div className={styles.block_phonebook}>
+        <h1>Phonebook</h1>
+        <ContactForm />
+      </div>
+      <div className={styles.block}>
+        <h1>Contacts</h1>
+        <ContactFilter />
+        {isContacts && <ContactList />}
+        {!isContacts && <p>No contacts</p>}
+      </div>
     </div>
   );
 };
