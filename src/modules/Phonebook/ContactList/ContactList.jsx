@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { removeContact } from 'redux/contacts/contacts-slice';
+import { fetchDeleteContacts } from '../../../redux/contacts/contacts-operations';
+
 import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 
 import ContactListEl from '../ContactListEl/ContactListEl';
@@ -14,16 +15,16 @@ const ContactList = () => {
   const dispatch = useDispatch();
 
   const handleRemoveContact = id => {
-    dispatch(removeContact(id));
+    dispatch(fetchDeleteContacts(id));
   };
 
   return (
     <div className={styles.contacts}>
-      {filteredContacts.map(({ id, name, number }) => (
+      {filteredContacts.map(({ id, name, phone }) => (
         <ContactListEl
           key={id}
           name={name}
-          number={number}
+          phone={phone}
           removeContact={() => handleRemoveContact(id)}
         />
       ))}
@@ -34,16 +35,16 @@ const ContactList = () => {
 export default ContactList;
 
 ContactList.defaultProps = {
-  // contacts: [],
+  contacts: [],
 };
 
 ContactList.propTypes = {
-  removeContact: PropTypes.func.isRequired,
+  removeContact: PropTypes.func,
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
     })
   ),
 };

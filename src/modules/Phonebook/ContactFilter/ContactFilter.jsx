@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import { getFilter } from 'redux/filter/filter-selector';
 import { setFilter } from 'redux/filter/filter-slice';
@@ -28,7 +27,3 @@ const ContactFilter = () => {
 };
 
 export default ContactFilter;
-
-ContactFilter.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-};
